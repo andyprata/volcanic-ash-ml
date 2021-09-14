@@ -34,5 +34,5 @@ Models are trained pixel by pixel using the data sets created by being given all
 Quantitative and qualitative measures of algorithm performance can be made from 'MainCode.py'. Qualitatively, graphics can be produced showing ash and not ash pixels when given AHI data from a frame. Noise reduction can also be carried out, which removes small regions designated as ash.
 
 <p align="center">
-  <img width="75%" src="/figures/ex_prediction.png">
+  <img width="90%" src="/figures/ex_prediction.png">
 </p>
