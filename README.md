@@ -11,14 +11,14 @@ Data is taken from a HTML file from the Tokyo VAAC containing vertex positions o
 A corrected brightness temperature difference can be calculated using bands 14 and 15 from the AHI to represent a finer grained estimate of volcanic ash position.
 
 <p align="center">
-  <img height="300" src="/figures/ex_VAG.png">
-  <img height="300" src="/figures/ex_BTD.png">
+  <img width="53%" src="/figures/ex_VAG.png">
+  <img width="40.2%" src="/figures/ex_BTD.png">
 </p>
 
 A final data set is created by taking all ash pixels with a negative corrected brightness temperature difference inside the VAAC polygon to contain ash and all others to contain no ash. This combines the human VAAC polygon classification method with the automated corrected brightness temperature method to produce a blended data set of pixels labelled as ash or not ash.
 
 <p align="center">
-  <img height="300" src="/figures/ex_dataset.png">
+  <img width="40.2%" src="/figures/ex_dataset.png">
 </p>
 
 
@@ -26,7 +26,7 @@ A final data set is created by taking all ash pixels with a negative corrected b
 Models are trained pixel by pixel using the data sets created by being given all 16 bands of the raw AHI data alongside the corresponding label of ash or not ash. The amount and variety of data required to make accurate predictions was being investigated so has been left flexible in 'MainCode.py'. Linear kernel SVCs were particularly interesting to investigate because the model coefficients signify the importances of each AHI band which could be compared to previously known results.
 
 <p align="center">
-  <img height="300" src="/figures/ex_coefficients.png">
+  <img width="55%" src="/figures/ex_coefficients.png">
 </p>
 
 
@@ -34,5 +34,5 @@ Models are trained pixel by pixel using the data sets created by being given all
 Quantitative and qualitative measures of algorithm performance can be made from 'MainCode.py'. Qualitatively, graphics can be produced showing ash and not ash pixels when given AHI data from a frame. Noise reduction can also be carried out, which removes small regions designated as ash.
 
 <p align="center">
-  <img height="350" src="/figures/ex_prediction.png">
+  <img width="75%" src="/figures/ex_prediction.png">
 </p>
