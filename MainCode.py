@@ -37,7 +37,7 @@ from skopt import BayesSearchCV
 import numpy as np
 import matplotlib.pyplot as plt
 import sys
-import winsound
+#import winsound
 import cv2 as cv
 
 # This (and the line at the bottom of the document) find the code runtime
@@ -56,9 +56,10 @@ denoised_image_flag = True
 
 # Define the variables we need to call our function
 polygon_filename = "20200801_28409600_0184_Text.html"
-polygon_fileloc = "../data/vaa/"
+polygon_fileloc = "./data/vaa/"
 sat_datetime = datetime(2020, 8, 1, 5)
-sat_location = '../data/himawari8/20200801_0500/'
+#sat_location = '/data/himawari8/20200801_0500/'
+sat_location = './data/himawari8/'
 top_row, bottom_row = 1100, 1650
 left_column, right_column = 600, 5200
 
@@ -76,9 +77,9 @@ print("Number of data points that contain ash:", ash_num)
 second_scene = True
 if second_scene:
     polygon_filename2 = '20200801_28409600_0185_Text.html'
-    polygon_fileloc2 = '../data/vaa/'
+    polygon_fileloc2 = './data/vaa/'
     sat_datetime2 = datetime(2020, 8, 1, 12)
-    sat_location2 = '../data/himawari8/20200801_1200/'
+    sat_location2 = './data/himawari8/'
     top_row2, bottom_row2 = 1100, 1650
     left_column2, right_column2 = 600, 5200
 
@@ -95,9 +96,9 @@ if second_scene:
 third_scene = True
 if third_scene:
     polygon_filename3 = '20200730_28409600_0178_Text.html'
-    polygon_fileloc3 = '../data/vaa/'
+    polygon_fileloc3 = './data/vaa/'
     sat_datetime3 = datetime(2020, 7, 30, 16)
-    sat_location3 = '../data/himawari8/20200730_1600/'
+    sat_location3 = './data/himawari8/'
     top_row3, bottom_row3 = 1100, 1650
     left_column3, right_column3 = 600, 5200
 
@@ -114,9 +115,9 @@ if third_scene:
 fourth_scene = True
 if fourth_scene:
     polygon_filename4 = '20200728_28409600_0168_Text.html'
-    polygon_fileloc4 = '../data/vaa/'
+    polygon_fileloc4 = './data/vaa/'
     sat_datetime4 = datetime(2020, 7, 28, 5)
-    sat_location4 = '../data/himawari8/20200728_0500/'
+    sat_location4 = './data/himawari8/'
     top_row4, bottom_row4 = 1100, 1650
     left_column4, right_column4 = 600, 5200
 
@@ -131,7 +132,7 @@ if fourth_scene:
 
 
 # Turn any stray nan results into zeros so they have no contribution to SVC.
-# It is porbably better to instead change an entire row to something (possibly
+# It is probably better to instead change an entire row to something (possibly
 # zero) but that is more effort and there don't seem to be many nan values so
 # this is probably fine for now to prevent errors.
 X_full = np.nan_to_num(X_full)
@@ -354,19 +355,11 @@ if denoised_image_flag:
 
 
 
-duration = 700  # milliseconds
-freq = 440  # Hz
-winsound.Beep(freq, duration)
+#duration = 700  # milliseconds
+#freq = 440  # Hz
+#winsound.Beep(freq, duration)
 print("\nRuntime:", datetime.now()-start)
 sys.exit()
-
-
-
-
-
-
-
-
 
 #############################################################################
 ############################# TRUE COLOUR IMAGE #############################
@@ -376,7 +369,8 @@ from pyresample import create_area_def
 
 # First scene
 observation_time = datetime(2020, 8, 1, 5)
-path_sat = '../data/himawari8/20200801_0500/'
+# path_sat = '../data/himawari8/20200801_0500/'
+path_sat = '../data/himawari8/'
 # # Second scene
 # observation_time = datetime(2020, 8, 1, 12)
 # path_sat = '../data/himawari8/20200801_1200/'

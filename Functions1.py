@@ -162,7 +162,7 @@ def dataset(polygon_filename, polygon_fileloc, sat_datetime, sat_location,
     # We now wish to extract all the desired satellite data we can.
     # Generate list of filenames for each Himawari band by finding each data 
     # file for our desired date & time.
-    filelist = glob.glob(sat_location + "*" + 
+    filelist = glob.glob(sat_location + "*" +
                          sat_datetime.strftime("%Y%m%d_%H%M") + "*.DAT")
     
     scn = Scene(filelist, reader='ahi_hsd')
@@ -186,7 +186,7 @@ def dataset(polygon_filename, polygon_fileloc, sat_datetime, sat_location,
     # Load in available desired channels
     scn.load(available_channels)
 
-    # Resample our data to the same resolution (that of our coursest band).
+    # Resample our data to the same resolution (that of our coarsest band).
     lcn = scn.resample(scn.coarsest_area(), resampler='native')
     
     # Creates column arrays containing the satellite data for all bands that 
@@ -601,8 +601,3 @@ def coefficients_plot(pipe, features_names=[]):
     plt.yticks(range(len(features_names)), features_names)
     plt.title('Linear SVC Coefficients')
     plt.show()
-
-
-
-
-

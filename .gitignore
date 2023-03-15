@@ -1,2 +1,10 @@
+# Local data storage
 data/himawari8/full_disk
+
+# PyCharm
+.idea
+
+# Byte code
+__pycache__
+*.pyc
 
